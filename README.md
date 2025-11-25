@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-Academic-green.svg)]()
 
 > **Optimizing distributed deep learning through algorithm-architecture co-design**  
-> CS 8125: Advanced Cloud Computing - Georgia Institute of Technology
+> CS 8125: Advanced Cloud Computing - Kennesaw State University
 
 ## 🎯 Project Overview
 
@@ -217,11 +217,9 @@ This is an academic project for educational purposes.
 
 ## 👤 Author
 
-**Nasif**  
-Georgia Institute of Technology  
+**Kazi Fahim Ahmad Nasif**  
+Kennesaw State University  
 Course: CS 8125 - Advanced Cloud Computing  
 Date: November 2025
 
 ---
-
-**⭐ If you find this project useful, please consider starring it!**

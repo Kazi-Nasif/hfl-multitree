@@ -208,7 +208,7 @@ resources:
 ## 🙏 Acknowledgments
 
 - **Course**: CS 8125: Advanced Cloud Computing
-- **Institution**: Georgia Institute of Technology
+- **Institution**: Kennesaw State University
 - **Hardware**: University GPU cluster (8× NVIDIA A100-SXM4-80GB)
 
 ## 📄 License

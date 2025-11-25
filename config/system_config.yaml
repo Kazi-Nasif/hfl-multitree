@@ -1,0 +1,71 @@
+# System Configuration for HFL with MultiTree
+
+# Network Topology
+topology:
+  type: "2D_Torus"  # Options: 2D_Torus, Mesh, Fat_Tree, BiGraph
+  dimensions: [8, 8]  # For 2D networks: [rows, cols]
+  num_nodes: 64
+  
+# Hardware Configuration
+hardware:
+  num_gpus: 8
+  gpu_type: "A100-80GB"
+  link_bandwidth_gbps: 16  # GB/s
+  link_latency_ns: 150
+  
+# Hierarchical FL Structure
+hierarchy:
+  num_edges: 5
+  devices_per_edge: [10, 10, 10, 10, 10]  # Can be different
+  
+# MultiTree Configuration
+multitree:
+  k_ary: 2  # Binary trees (can try 4, 8)
+  tree_construction: "topology_aware"
+  enable_message_flow_control: true
+  
+# AHFLP Configuration
+ahflp:
+  l1_max: 10  # Max local training epochs
+  l2_max: 10  # Max edge aggregations
+  learning_rate_initial: 0.001
+  learning_rate_decay: 0.995
+  phi: 10.0  # Control parameter
+  
+# Resource Constraints
+resources:
+  time_budget_seconds: 600
+  energy_budget_joules: [200, 400]  # Range per device
+  
+# Device Configuration
+device:
+  cpu_freq_range_ghz: [0.1, 0.5]  # Min, Max CPU frequency
+  bandwidth_mhz: 60  # Total wireless bandwidth per edge
+  transmission_power_w: [0.2, 0.4]  # Range
+  channel_noise_power: 1e-10
+  effective_capacitance: 1e-27  # For energy calculation
+  
+# Training Configuration
+training:
+  mini_batch_size: 32
+  data_distribution: "Edge-NIID"  # Options: Edge-IID, Edge-NIID, Device-NIID
+  
+# Datasets
+datasets:
+  - name: "CIFAR-10"
+    num_classes: 10
+    input_size: [3, 32, 32]
+  - name: "FEMNIST"
+    num_classes: 62
+    input_size: [1, 28, 28]
+    
+# Simulation
+simulation:
+  seed: 42
+  num_runs: 5  # For averaging results
+  
+# Logging
+logging:
+  log_level: "INFO"
+  save_frequency: 10  # Save every N rounds
+  tensorboard: true

@@ -1,0 +1,3 @@
+dataset,topology,partition,algorithm,final_accuracy,final_loss,total_time,file
+cifar10,2D_Torus,iid,multitree,75.22,0.7468493292316462,5399.004529237747,cifar10_2D_Torus_iid_multitree_20251129_204445.json
+cifar10,2D_Torus,iid,multitree,53.03,1.4446706615697842,897.8887293338776,cifar10_2D_Torus_iid_multitree_20251129_185052.json

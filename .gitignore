@@ -64,3 +64,7 @@ results/checkpoints/*
 *.tmp
 *.bak
 *.cache
+
+# Data files (too large for GitHub)
+data/
+*.tar.gz

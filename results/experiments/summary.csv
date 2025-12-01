@@ -1,3 +1,14 @@
 dataset,topology,partition,algorithm,final_accuracy,final_loss,total_time,file
+cifar10,Fat_Tree,iid,multitree,75.26,0.7560706122424274,2746.752862930298,cifar10_Fat_Tree_iid_multitree_20251130_022508.json
+cifar10,Mesh,niid_dirichlet,multitree,72.11,0.8393341823698233,1889.361517906189,cifar10_Mesh_niid_dirichlet_multitree_20251130_045801.json
+cifar10,2D_Torus,niid_dirichlet,multitree,71.66,0.8445626727689188,2555.052258014679,cifar10_2D_Torus_niid_dirichlet_multitree_20251130_035410.json
+cifar10,2D_Torus,iid,ring,75.55,0.7375083360047386,2743.616537332535,cifar10_2D_Torus_iid_ring_20251130_005326.json
+cifar10,Mesh,iid,multitree,75.23,0.7503506043277228,2741.4265356063843,cifar10_Mesh_iid_multitree_20251130_013914.json
+cifar10,Fat_Tree,niid_dirichlet,multitree,71.23,0.8540531375918525,1860.6044902801514,cifar10_Fat_Tree_niid_dirichlet_multitree_20251130_052923.json
+cifar10,2D_Torus,iid,multitree,75.14,0.7593404632597305,2777.336528778076,cifar10_2D_Torus_iid_multitree_20251130_000736.json
 cifar10,2D_Torus,iid,multitree,75.22,0.7468493292316462,5399.004529237747,cifar10_2D_Torus_iid_multitree_20251129_204445.json
+cifar10,2D_Torus,niid_dirichlet,ring,72.4,0.834120785085538,1898.477392911911,cifar10_2D_Torus_niid_dirichlet_ring_20251130_042611.json
+cifar10,BiGraph,iid,multitree,75.1,0.7594736941134967,2761.3926577568054,cifar10_BiGraph_iid_multitree_20251130_031116.json
 cifar10,2D_Torus,iid,multitree,53.03,1.4446706615697842,897.8887293338776,cifar10_2D_Torus_iid_multitree_20251129_185052.json
+cifar10,2D_Torus,iid,multitree,22.28,2.0258781540508086,143.97322845458984,cifar10_2D_Torus_iid_multitree_20251129_231525.json
+cifar10,BiGraph,niid_dirichlet,multitree,72.17,0.8321092295380065,1865.1809022426605,cifar10_BiGraph_niid_dirichlet_multitree_20251130_060049.json

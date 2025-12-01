@@ -1,15 +1,18 @@
 #!/bin/bash
-# Run comprehensive experiments with explicit Python path
+# Run comprehensive experiments on GPU 1 (has 60GB free)
 
 cd ~/Cloud\ Computing/hfl_multitree_project
 
-# Use full Python path instead of conda
+# Force use of GPU 1
+export CUDA_VISIBLE_DEVICES=1
+
+# Use full Python path
 PYTHON="/mnt/bst/bdeng2/knasif/miniconda3/envs/hfl_multitree/bin/python"
 
 echo "========================================"
 echo "Starting Comprehensive Experiment Suite"
+echo "Using GPU: $CUDA_VISIBLE_DEVICES (appears as GPU 0 to PyTorch)"
 echo "Started: $(date)"
-echo "Using Python: $PYTHON"
 echo "========================================"
 
 # Experiment counter
@@ -41,18 +44,23 @@ run_exp() {
         --rounds 100 \
         --clients 50
     
+    local exit_code=$?
     echo "Completed: $(date)"
+    echo "Exit code: $exit_code"
+    
+    if [ $exit_code -ne 0 ]; then
+        echo "⚠️  Experiment failed, continuing to next..."
+    fi
     echo ""
     
     EXP_NUM=$((EXP_NUM + 1))
 }
 
-# CIFAR-10 Experiments (Main Results)
+# CIFAR-10 Experiments
 for partition in iid niid_dirichlet; do
     for topology in 2D_Torus Mesh Fat_Tree BiGraph; do
         run_exp "cifar10" "$topology" "$partition" "multitree"
         
-        # Ring baseline only for 2D_Torus
         if [ "$topology" == "2D_Torus" ]; then
             run_exp "cifar10" "$topology" "$partition" "ring"
         fi
